@@ -83,17 +83,17 @@ import jsonpath
 client_id='55vVoa0UQ4hFaB2xp6Qliw'
 secret_key='o_NM8lXya7AIvvS6BMYc_R9EshNYaQ'
 
-auth = requests.auth.HTTPBasicAuth(client_id,secret_key) #创建的key
+auth = requests.auth.HTTPBasicAuth(client_id,secret_key) #create the key
 data ={
     'grant_type':'password',
     'username':'xbw199942',
     'password':'Xbw891054582'
-} #reddit的账户名称和密码
+} #reddit's account and password
 
 headers ={'User-Agent':'MyAPI/0.0.1'}
 
 res = requests.post('https://www.reddit.com/api/v1/access_token',
-                  auth=auth,data=data,headers=headers) #登录
+                  auth=auth,data=data,headers=headers) #log in
 
 TOKEN = res.json()['access_token']
 
